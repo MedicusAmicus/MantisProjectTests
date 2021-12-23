@@ -14,9 +14,9 @@ namespace MantisProjectTests
                 Logout();
             }
             Type(By.Name("username"), account.Name);
-            driver.FindElement(By.XPath("//input[@value='Вход']")).Click();
+            //driver.FindElement(By.XPath("//input[@value='Вход']")).Click(); Это для 2-й версии мантиса
             Type(By.Name("password"), account.Pass);
-            driver.FindElement(By.XPath("//input[@value='Вход']")).Click();
+            driver.FindElement(By.XPath("//input[@value='Войти']")).Click();
         }   
 
         public void Logout()

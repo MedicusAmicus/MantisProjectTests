@@ -13,16 +13,18 @@ namespace MantisProjectTests
         protected LoginHelper loginHelper;
         protected NavigationHelper navigator;
         protected ProjectHelper projects;
+        public APIHelper API { get;  set; }
 
         private static ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
 
         private ApplicationManager()
         {
             driver = new ChromeDriver();
-            baseURL = "http://localhost/mantisbt-2.25.2/";
+            baseURL = "http://localhost/mantisbt-1.3.20/";
             loginHelper = new LoginHelper(this);
             navigator = new NavigationHelper(this, baseURL);
             projects = new ProjectHelper(this);
+            API = new APIHelper(this);
         }
         
 
