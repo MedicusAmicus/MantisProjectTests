@@ -11,11 +11,9 @@ namespace MantisProjectTests
         {
             AccountData account = new AccountData("administrator", "root");
 
-
             if (app.API.GetProjectsList(account).Count == 0)
             {
-                ProjectData project = new ProjectData(GenerateRandomString(10));
-                app.Projects.Create(project);
+                app.API.CreateProject(account, new ProjectData(GenerateRandomString(10)));
             }
             
             List<ProjectData> oldProjects = app.API.GetProjectsList(account);

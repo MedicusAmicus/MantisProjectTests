@@ -50,8 +50,6 @@ namespace MantisProjectTests
             WebDriverWait.ReferenceEquals(driver.Url, manager.baseURL + "manage_proj_page.php");
         }
 
-
-
         private void SubmitProjectCreation()
         {
             driver.FindElement(By.XPath("//input[@value='Добавить проект']")).Click();
